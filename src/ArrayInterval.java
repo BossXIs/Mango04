@@ -15,7 +15,7 @@ public class ArrayInterval implements Interval {
     public Interval intersect(Interval r) {
         int lb = max(boundary[0], r.getSmallestElement());
         int rb = min(boundary[1], r.getLargestElement());
-        if (lb <= rb) return new ArrayInterval(new int[]{max(boundary[0], r.getSmallestElement()), min(boundary[1], r.getLargestElement())});
+        if (rb >= lb) return new ArrayInterval(new int[]{max(boundary[0], r.getSmallestElement()), min(boundary[1], r.getLargestElement())});
         else return new ArrayInterval(new int[]{0, 0});
     }
 }
