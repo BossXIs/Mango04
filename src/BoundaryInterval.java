@@ -14,9 +14,9 @@ public class BoundaryInterval implements Interval {
         return rightBoundary;
     }
     public Interval intersect(Interval r){
-                int nlb = max(leftBoundary, r.getSmallestElement());
-                int nrb = min(rightBoundary, r.getLargestElement());
-    if(nlb>=nrb) return new BoundaryInterval(nlb,nrb);
+                int lb = max(leftBoundary, r.getSmallestElement());
+                int rb = min(rightBoundary, r.getLargestElement());
+    if(lb<rb) return new BoundaryInterval(lb,rb);
     else return new BoundaryInterval(0,0);
     }
 }
